@@ -10,7 +10,7 @@ export const AppProvider = ({ children }) => {
     const storedUser = localStorage.getItem("kitchenData");
     return storedUser ? JSON.parse(storedUser) : null;
   });
-  const [kitchenData, setKichenData] = useState(null);
+  const [kitchenData, setKitchenData] = useState(null);
 
   const login = (userData) => {
     setUser(userData);
@@ -24,7 +24,7 @@ export const AppProvider = ({ children }) => {
   }
   
   return (
-    <AppContext.Provider value={{ kitchenData, setKichenData, user, login, logout  }}>
+    <AppContext.Provider value={{ kitchenData, setKitchenData, user, login, logout  }}>
       {children}
     </AppContext.Provider>
   );
